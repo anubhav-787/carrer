@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Career Counselor - Login/Sign Up</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .toggle-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .toggle-buttons button {
+      width: 50%;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      background-color: #eee;
+      font-weight: bold;
+      border-radius: 6px 6px 0 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .toggle-buttons button.active {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+    }
+
+    form.active {
+      display: flex;
+    }
+
+    label {
+      margin: 10px 0 5px;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    input, select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    button.submit-btn {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button.submit-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>WELCOME TO AI Career Counselor WEB APP</h2>
+    <div class="toggle-buttons">
+      <button id="loginBtn" class="active">Login</button>
+      <button id="signupBtn">Sign Up</button>
+    </div>
+
+    <form id="loginForm" class="active">
+      <label for="loginEmail">Email Address</label>
+      <input type="email" id="loginEmail" required />
+
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" required />
+
+      <button class="submit-btn"><a href="web_page.html">Login</a></a></button>
+    </form>
+
+    <form id="signupForm">
+      <label for="signupName">Name</label>
+      <input type="text" id="signupName" required />
+
+      <label for="signupEmail">Email Address</label>
+      <input type="email" id="signupEmail" required />
+
+      <label for="signupPassword">Password</label>
+      <input type="password" id="signupPassword" required />
+
+      
+        
+      </select>
+
+      <button class="submit-btn"><a href="web_page.html">Sign Up</a></a></button>
+    </form>
+  </div>
+
+  <script>
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+
+    function toggleForm(showLogin) {
+      if (showLogin) {
+        loginForm.classList.add('active');
+        signupForm.classList.remove('active');
+        loginBtn.classList.add('active');
+        signupBtn.classList.remove('active');
+      } else {
+        signupForm.classList.add('active');
+        loginForm.classList.remove('active');
+        signupBtn.classList.add('active');
+        loginBtn.classList.remove('active');
+      }
+    }
+
+    loginBtn.addEventListener('click', () => toggleForm(true));
+    signupBtn.addEventListener('click', () => toggleForm(false));
+  </script>
+</body>
+</html>

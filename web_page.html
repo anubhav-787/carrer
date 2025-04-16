@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Career Counselor</title>
+  <script src="carrier.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 120vh;
+    }
+    .container {
+      background: wheat;
+      padding: 5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px black;
+      max-width: 600px;
+      width: 100%;
+    }
+    h1 {
+      text-align: center;
+      color: rgb(51, 51, 51);
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      color: rgb(85, 85, 85);
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px black;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      width: 100%;
+      border: none;
+      background: green;
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: lightgreen;
+    }
+    .result {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgb(231, 244, 234);
+      border-left: 5px solid green;
+    }
+    footer{
+        margin-top: 0.8cm;
+        margin-left: 5cm;
+    }
+    #gemini{
+        padding: 8px;
+      width: 100%;
+      border: 10px;
+      background: lightsalmon;
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Career Counselor</h1>
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" />
+
+    <label for="interest">Your Interest Area:</label>
+    <select id="interest">
+      <option value="technology">Technology</option>
+      <option value="medicine">Medicine</option>
+      <option value="arts">Arts</option>
+      <option value="business">Business</option>
+      <option value="education">Education</option>
+    </select>
+
+    <label for="skills">Your Skills:</label>
+    <textarea id="skills" rows="3" placeholder="E.g., coding, public speaking, drawing..."></textarea>
+
+    <label for="goals">Your Career Goals:</label>
+    <textarea id="goals" rows="3" placeholder="E.g., earn well, help people, travel the world..."></textarea>
+
+    <button onclick="getCareerAdvice()">Get Career Advice</button>
+    <div id="result" class="result" style="display: none;"></div>
+    <p>For more guidance ask to our AI assistant which gives better advice to achieve your goals</p>
+    
+    <footer>
+      <a id="gemini" href="https://www.bing.com/copilotsearch?q=career+guidance+for+me+i+tell+you+my+interest&FORM=CSSCOP">Ask To Assistant</a>
+    </footer>
+    
+    
+  </div>
+</body>
+</html>
